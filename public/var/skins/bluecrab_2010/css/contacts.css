@@ -1,0 +1,111 @@
+#contact_us_container {
+
+}
+#contact_us_container #left_container {
+  float:left;
+  width:340px;
+  padding:10px 10px 10px 0;
+}
+#contact_us_container #right_container {
+  float:right;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#fbf2d3');
+  background: -moz-linear-gradient(100% 100% 90deg, #fbf2d3, #ffffff);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#fbf2d3) );
+  width:235px;
+}
+#contact_us_container #right_container #top_image {
+  background:url(../images/secondary/contact_us/right_container.html) no-repeat 0px 0px;
+  height:15px;
+  width:235px;
+}
+#contact_us_container #right_container #holder {
+    padding:0px 25px 10px 25px;
+}
+#contact_us_container img {
+  display:block;
+}
+#chkEnewsletter, #chkBrochure, #chkComments {
+  margin-right:10px;
+  }
+label.default {
+  display:block;
+  color:#9a998d;
+  font-weight: bold;
+}
+#contact_us_container textarea {
+  font-family:arial, sans-serif;
+  width:270px;
+  height:60px;
+}
+label.default {
+  margin:5px 0 3px 0;
+  color:#9a998d;
+  font-size: 14px;
+}
+.optin {
+  width:100%;
+  padding:0 10px 0 0;
+  margin:0;
+  color:#e37411;
+  font-size: 16px;
+  font-weight: bold;
+  display:block;
+}
+label.small {
+  margin:0 0 15px 0;
+  font-size:11px;
+}
+.optin label.label_text {
+  color:#e37411;
+}
+#contact_us_container #left_container .hr {
+  clear:both;
+  height:0px;
+  border:none;
+  border-top:1px solid #edd071;
+  border-bottom:1px solid #fae3a3;
+  display:block;
+  margin:10px 0 10px 0;
+}
+#contact_us_container #right_container .hr {
+  clear:both;
+  height:0px;
+  border:none;
+  border-top:1px solid #edd071;
+  border-bottom:1px solid #fae3a3;
+  display:block;
+  margin:10px 0 10px 0;
+}
+#contact_us_container #right_container h1 {
+  font-size:18px;
+}
+#contact_us_container #right_container p {
+  color:#444;
+}
+
+#contact_us_container #right_container a {
+  font-size:16px;
+}
+.label_text {
+	display:block;
+	float:left;
+}
+.labelCheckBox {
+	float:left;
+}
+.expandable {
+	display:block;
+    float:right;
+    color:#9a998d;
+	cursor:default;
+}
+.notes {
+    font-style: italic;
+    color:#9a998d;
+}
+#comments_form, #brochure_form {
+	display:block;
+	clear:both;
+	padding-top:5px;
+	margin:0;
+}

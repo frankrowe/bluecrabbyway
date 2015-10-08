@@ -1,0 +1,29 @@
+body,html { font-family:"Arial",sans-serif; font-size:12px; line-height:14px; margin:10px; background-color:#fff; background-image:none; }
+#header img { float:left; }
+#subpage_titlebox img { display:none; }
+#header h1 {  font-family:georgia, times, sans-serif; font-size:22px; font-weight:bold; float:left; margin:10px 0 0 10px; color:#005da9; }
+#subpage_titlebox h1 { clear:both; font-family:georgia, times, sans-serif; font-size:18px; font-style:italic; font-weight:normal; float:left; margin:-15px 0 30px 75px; padding:0; }
+
+a { text-decoration:none; color:#000; }
+#outermostwrapper, #shadowcontainer, #container, #maincontent_top, #subpage_titlebox, #subpage_titlebox_left, #subpage_titlebox_center, #subpage_titlebox_middleright, #subpage_mainbox { background:#FFF; -moz-box-shadow: 0px 0px 0px #FFF; -webkit-box-shadow: 0px 0px 0px #fff; box-shadow: 0px 0px 0px #fff; }
+#subpage_titlebox_left, #subpage_titlebox_middleright, #subpage_titlebox_smallright, #subpage_titlebox_farright { display:none;  }
+
+#contentContainer { background:none; }
+#sidebar, #footerContainer, #footer, #backToTop, #start_location_container, #startlocation, button { display:none; }
+#contentContainer, #wideSecondaryContainer { min-width:0px; width:auto; background:none; }
+.no_print { display:none; }
+.print_only { display:inline; }
+#directions_container { clear:both; }
+#disclaimer { display:none; }
+.directions_instructions { display:block; margin:0 0 0 50px; }
+.directions_title_bar { background:none; border:none; }
+.title { font-size:16px; margin:20px 0 10px 0; font-weight:bold; }
+.item_count { display:none; }
+.directions_title_bar .address, .directions_title_bar .distance { margin:0 0 0 30px;  color:#55504a; font-style:italic; font-size:10px;}
+#directions_container .distance { margin-bottom:10px;color:#55504a;}
+.directions_instructions { font-size:12px; line-height:20px; margin-left:30px; }
+.directions_instructions .distance { font-style:italic; margin-left:15px;font-size: 12px; margin-bottom: 20px;}
+.directions_instructions .instruction div { clear:both; display:inline; margin-left:20px; }
+.spacer {height:0px;}
+#wideSecondaryContent{padding-top:0px;padding-left: 10px;}
+.distance { margin-bottom:10px; }

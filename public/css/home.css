@@ -1,0 +1,144 @@
+#top_module{
+	width:912px;
+	height:219px;
+	margin:0;
+	z-index: 1;
+	position: relative;
+}
+#text_box{
+	padding:20px 20px 25px 6px;
+	margin-left:auto;
+	margin-right:auto;
+	float:left;
+	width:245px;
+}
+#topmodule_center {
+	float:left;
+	height:219px;
+	width:882px;
+	background-image:url("../var/skins/bluecrab_2010/images/home/topmodule_center.png");
+}
+#text_box h1, #byway_sidebar h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#666666;
+	font-weight:bold;
+	padding-bottom:10px;
+	margin-bottom:0px;
+	margin-top:0px;
+	padding-top:0px;
+}
+#text_box p{
+	line-height:1.5em;
+	color:#666666;
+}
+#maincontent_middle {
+	position:relative;
+	margin:15px 0 0 0;
+	height:343px;
+	width:940px;
+}
+#map_canvas {
+	width:620px;
+	height:343px;
+}
+#byway_sidebar {
+	background-image:url("../var/skins/bluecrab_2010/images/home/bywaymap_bkgrd.png");
+	background-repeat:no-repeat;
+	width:250px;
+	height:313px;
+	padding: 20px 12px 10px 22px;
+	float:left;
+}
+#byway_sidebar p{
+	line-height:1.5em;
+	color:#363636;
+}
+
+.widget {
+	float:left;
+	display:block;
+	width: 290px;
+	height:180px;
+	padding-top:36px;
+	margin:15px 0 0 0;
+	text-align:center;
+	overflow:hidden;
+}
+#events_widget {
+	background: url(../var/skins/bluecrab_2010/images/home/events_box.png) no-repeat;
+	margin-right:21px;
+}
+#itinerary_box {
+	background: url(../var/skins/bluecrab_2010/images/home/itinerary_widget.png) no-repeat;
+}
+#featured_widget {
+	background: url(../var/skins/bluecrab_2010/images/home/featured_widget.png) no-repeat;
+	float:right;
+}
+#prepackageditinerary_widget {
+	position:relative;
+	height:170px;
+	width:inherit;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+#events_widget_containment {  height:142px; width:inherit; overflow:hidden; }
+#events_widget .even { background:#fff; }
+#events_widget .event_date { height:35px; vertical-align:middle; padding:0 0 0 20px; font-weight:normal; width:70px; text-align:left; }
+#events_widget .event_desc { height:35px; vertical-align:middle; padding:0 10px 0 0; font-weight:600;  text-align:left; }
+	#events_widget .event_desc  a { color:#363636; }
+#events_widget #viewCalendar { display: block; text-align: center; line-height:38px; vertical-align:middle; color:#005da9; font-weight:bold; font-size: 14px;  }
+
+/*image slider*/
+#makeMeScrollable{
+	display:block;
+	width:536px;
+	padding: 25px 7px 25px 7px;
+	float:left;
+	overflow: hidden;
+}
+.scrollingHotSpot
+{
+	margin-top: 10px;
+	padding-top:65px;
+	position: relative;
+	display: block;
+	width: 28px;
+	height: 140px;
+	float:left;
+	cursor: pointer;
+}
+#scrollingHotSpotLeft
+{
+	background:url(../var/skins/bluecrab_2010/images/home/left_arrow.png) 0 center no-repeat;
+}
+
+#scrollingHotSpotRight
+{
+	background: url(../var/skins/bluecrab_2010/images/home/left_arrow.png) -28px center no-repeat;
+}
+
+#scrollWrapper
+{
+	position: absolute;
+	overflow: hidden;
+	width: 528px;
+	height: 175px;
+	margin-left:5px;
+}
+#scrollableArea
+{
+	position: absolute;
+	display:block;
+	height: 175px;
+	width:250px;
+}
+.sliderImage {
+     padding-right:3px;
+     margin:0;
+     width: 173px;
+     float:left;
+     cursor: pointer;
+}

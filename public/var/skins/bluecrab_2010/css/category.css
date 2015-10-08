@@ -1,0 +1,111 @@
+a.toplevelcategory {
+  font-weight:bold;
+  font-size:12px;
+  line-height:25px;
+}
+#attractions_list_container {
+  display:block;
+}
+#attractions_list_inner_container {
+  display: block;
+  clear: both;
+  margin: 15px 0 10px 0;
+}
+#attractions_list_inner_container p {
+  font-size:12px;
+  line-height: 13px;
+}
+.attractions_list_logo {
+  float: left;
+  display:block;
+  width: 100px;
+  min-height: 25px;
+  max-height: 120px;
+  margin: 0 45px 0 15px;
+  padding: 0 0 0 0;
+  text-align: left;
+  vertical-align: middle;
+}
+.attractions_list_content {
+  float: left;
+  width: 420px;
+  padding: 0;
+}
+.attractions_list_content a {
+  color: #005da9;
+  font-size: 14px;
+  font-weight: bold;
+}
+.attractions_list_content p {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 13px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+#category_ajax_loader {
+  background:#efefef;
+  clear:both;
+  display:block;
+  border:1px solid #ccc;
+  text-align:center;
+  padding:3px 0 3px 0;
+  margin:20px;
+}
+.toplevel_category_container {
+     display:block;
+     width:589px;
+     min-height:131px;
+     margin:8px 0 0 0;
+}
+.toplevel_category_container .image_holder {
+     display:block;
+     float:left;
+     width:181px;
+     height:124px;
+     padding:7px 0 0 8px;
+     background:url(../images/secondary/category_toplevel_interests.html) no-repeat;
+}
+.toplevel_category_container .image_holder img {
+     display:block;
+     width:172px;
+     height:115px;
+}
+.toplevel_category_container .content_holder {
+     display:block;
+     float:left;
+     margin:0 0 0 15px;
+     width:385px;
+}
+.toplevel_category_container b a{
+     font-size: 1.4em; 
+     color: #005da9;  
+     margin-right:5px;
+     margin-left:0px;  
+}
+.toplevel_category_container a {
+     font-size: 1em; 
+     color: #478ac1;
+     font-weight:bold;
+}
+
+
+#sidebar_image_container {
+	display:block;
+	position:relative;
+	left:-6px;
+	margin:0 0 14px 0;
+	background:url(../images/secondary/sidebar/image_holder.jpg) no-repeat;
+	width:223px;
+	height:184px;
+}
+#sidebar_image_inner_container {
+	display:block;
+	position:absolute;
+	left:8px;
+	top:8px;
+	width:197px;
+	height:137px;
+	text-align:center;
+	overflow:hidden;
+}

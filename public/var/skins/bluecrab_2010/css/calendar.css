@@ -1,0 +1,121 @@
+.calendar
+{
+	border-collapse: separate;
+	border-spacing:0;
+}
+
+
+
+.dateRow td {
+	color: #494949;
+	font-size:16px;
+	text-align: left;
+	border-top:5px solid #fdfbf6;
+	border-right:5px solid #fdfbf6;
+	background:#fff;
+}
+.dateRow td.emptycell, .eventRow td.outsideofmonth  {
+	background: #fdfbf6;
+}
+.dateRow td div  {
+	padding:3px;
+	border-top: 1px solid #d9d9d9;
+}
+#today_date {
+	color:#e47512;
+}
+
+.dayrow td {
+    color:#e9ca75;
+    font-size:16px;
+	text-align: center;
+	padding: 3px;
+	border-top:5px solid #fdfbf6;
+}
+.dayrow {
+	background: #fdfbf6;
+	border-top:5px solid #fdfbf6;
+}
+.event_title  {
+	font-size: 11px;
+	color:#005da9;
+	font-weight:bold;
+}
+.eventRow td {
+	background:#fff;
+	border-right:5px solid #fdfbf6;
+	height:21px;
+}
+.eventRow .event_event {
+	background: #eaf3fa;
+	border-bottom:1px solid #fff;
+	padding: 3px;
+	height:14px;
+}
+.eventRow .event_event:hover {
+	background:#c2C2BF;
+}
+.eventRow .event_event:hover .event_title {
+	color:#FFF;
+}
+.event_popup_active {
+	position:absolute;
+	display:block;
+}
+.event_popup_inactive {
+	position:absolute;
+	display:none;
+}
+.event_popup {
+	width:250px;
+	margin-left:50px;
+	z-index:5;
+	background:#fff;
+	border:1px solid #9da19c;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.event_popup_inner {
+    border:5px solid #c2c2bf;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+    border-top:none;
+    margin-top:-3px;
+}
+#subpage_mainbox .event_popup_inner p{
+    font-size: 13px;
+}
+.event_popup .title {
+	background:#c2c2bf;
+	color:#494e48;
+	padding:2px 0 2px 0;
+	font-weight:bold;
+	min-height: 15px;
+}
+.event_popup_time {
+    margin-top: 10px;
+    line-height: 2em;
+    padding-top:10px;
+}
+.event_popup .desc {
+	margin:15px;
+}
+.event_popup_notes {
+	margin-left: 0;
+	margin-bottom: 0;
+	margin-right: 0;
+	margin-top: 6px;
+	font-size: 13px;
+}
+.event_popup .m_blank_button {
+	font-size: 12px;
+	text-align: center;
+}

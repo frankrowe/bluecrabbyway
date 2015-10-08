@@ -1,0 +1,88 @@
+{{#extend "css"}}
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+{{/extend}}
+
+<div id="maincontent_top">
+
+    <div id="top_module">
+        <img src="var/skins/bluecrab_2010/images/home/topmodule_left.png" alt="layout spacer" style="float:left;" />
+        <div id="topmodule_center">
+            <div id="text_box">
+                <h1>Blue Crab Byway</h1>
+                <p> An imperfect loop links Lower Eastern Shore towns to form the shell of the Blue Crab byway, while several branches extend out like stubby legs and curved claws toward the Chesapeake Bay and Atlantic Ocean.</p>
+                <br/>
+                <p>
+                    <a href="static/5" title="Explore the blue crab byway by route" onclick="_gaq.push(['_trackEvent', 'CampaignBanner', 'Image Click', 'Explore By Route']); ntptEventTag('ev=CampaignBanner | Image Click | Explore By Route'); setTimeout(function() { window.location='/static/5' },250);return false;">
+                        <img src="var/skins/bluecrab_2010/images/home/learn-more.png" alt="plus sign" align="left" style="margin-right:10px;" />Click here to learn more about each route of the Blue Crab Byway.</a>
+                </p>
+            </div>
+            <!-- <img src="image/Download_on_the_App_Store_Badge_US-UK_135x40.svg" /> -->
+
+        </div>
+        <img src="var/skins/bluecrab_2010/images/home/topmodule_right.png" alt="layout spacer" style="float:right;" />
+    </div>
+
+    <div id="maincontent_middle">
+        <div id="byway_sidebar">
+            <h1>Plan Your Blue Crab Adventure</h1>
+            <p><b>The Blue Crab Byway</b> is located on the Eastern Shore of Maryland. Choose your destinations below to see them on the map.</p>
+            <br />
+            <div id="map_delimiters">
+                <ul id="delimiter_tabs">
+                    <li id="routes_delimiter_tab" class="map_tab_delimiter_selected">
+                        <a onclick="bywayMap.mapDelimiter(this, 'routes')">Routes</a>
+                    </li>
+                    <li id="interests_delimiter_tab" class="map_tab_delimiter_link">
+                        <a onclick="bywayMap.mapDelimiter(this, 'interests')">Interests</a>
+                    </li>
+                    <li id="towns_delimiter_tab" class="map_tab_delimiter_link">
+                        <a onclick="bywayMap.mapDelimiter(this, 'towns')">Towns</a>
+                    </li>
+                </ul>
+                <!-- delimiter_tabs -->
+
+                <div id="delimiter_content">
+                    <div id="routes_delimiter" class="delimiter_menu" style="display:block;">
+                      {{#each sites.routes}}
+                      <li class="submenuLI">
+                        <a id="{{.}}" type="route" class="delimiter_filter md_31" onmouseover="bywayMap.highlightRoute(id,true);" onmouseout="bywayMap.highlightRoute(id,false);" onclick="bywayMap.addRoute(id)" />
+                            {{.}}<img src="var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this route on the map" class="clearFilter" />
+                        </a>
+                      </li>
+                      {{/each}}
+                    </div>
+
+                    <div id="interests_delimiter" class="delimiter_menu">
+                      {{#each sites.categories}}
+                      <a id="{{.}}" type="interest" class="delimiter_filter md_15" onclick="bywayMap.addCategory(id)" >
+                        {{.}}<img src="var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this category on the map" class="clearFilter" />
+                      </a>
+                      {{/each}}
+                    </div>
+
+                    <div id="towns_delimiter" class="delimiter_menu">
+                      {{#each sites.towns}}
+                      <a id="{{.}}" type="interest" class="delimiter_filter md_15" onclick="bywayMap.addTown(id)" >
+                        {{.}}<img src="var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this category on the map" class="clearFilter" />
+                      </a>
+                      {{/each}}
+                    </div>
+                </div>
+                <!--delimiter_content-->
+            </div>
+            <!-- map_delimters -->
+            <div style="text-align:right; z-index:5; position:absolute; bottom:5px; left:185px;">
+                <button class="reset_map_button" onclick="bywayMap.resetMap()">&nbsp;</button>
+            </div>
+        </div>
+        <!-- byway_sidebar -->
+
+        <div id="map_canvas"></div>
+
+    </div>
+</div>
+
+{{#extend "css"}}
+   <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+   <script src="js/map.js"></script>
+{{/extend}}

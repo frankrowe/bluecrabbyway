@@ -1,0 +1,98 @@
+#start_location_container { float:left; display:block; width:345px; font-weight:bold; color:#666666; }
+	#start_location_container input[type=text] { float:left; display:block; width:232px; line-height:30px; height:30px; padding:0 5px 0 5px; margin:5px 0 0 0; vertical-align:middle; background:#fff url(../images/itinerary/text_box.html) top left no-repeat; border:none; }
+	#start_location_container input[type=button] { float:left; display:block; width:49px; height:29px; margin:5px 0 0 5px; background:url(../images/itinerary/go.html) no-repeat; border:none; }
+
+#tools_container { float:right; display:block; width:117px; height:29px; padding:12px; background:url(../images/itinerary/tools.html) no-repeat; overflow:hidden; }
+	#tools_container a { float:left; display:block; width:32px; height:32px; margin:0 3px 0 3px; text-decoration:none; }
+
+#instructions { float:none; display:block; clear:both; padding:15px 0 15px 0; color:#666666; }
+
+#startlocation { float:left; display:block; width:569px; clear:both; background:#FFF; color:#777777; margin:25px 0 0 0; padding:10px; display:none; }
+	#startlocation .item_count { margin:3px 10px 0 0; }
+
+#itinerary_container { float:left; display:block; clear:both; list-style-type: none; margin: 0; padding: 0; }
+	#itinerary_container .odd { background:transparent; }
+	#itinerary_container .even { background:#fff; }
+	#itinerary_container .drag, #itinerary_container .odd:hover, #itinerary_container .even:hover { background:#e4f3fe; }
+
+	.itinerary_item, .itinerary_item_placeholder { float:none; display:block; width:569px; height:40px; padding:15px 10px 15px 10px; margin-bottom:1px; }
+		.itinerary_item_placeholder { border:2px dashed #bbbbbb; height:36px; width:565px; }
+		.itinerary_item_active { border:1px solid #b9dbf7; height:38px; width:567px; cursor:move; -moz-box-shadow: 5px 5px 20px #929292; -webkit-box-shadow: 5px 5px 10px #929292; box-shadow: 5px 5px 10px #929292;}
+			.item_count { float:left; display:block; width:25px; height:26px; margin:7px 10px 0 0; }
+			.item_count_1 { background:url(../images/itinerary/item_count_sprite.html); background-position:0px 0px; }
+				.itinerary_item:hover .item_count_1 { background-position:0px 26px; }
+			.item_count_2 { background:url(../images/itinerary/item_count_sprite.html); background-position:-25px 0px; }
+				.itinerary_item:hover .item_count_2 { background-position:-25px 26px; }
+			.item_count_3 { background:url(../images/itinerary/item_count_sprite.html); background-position:-50px 0px; }
+				.itinerary_item:hover .item_count_3 { background-position:-50px 26px; }
+			.item_count_4 { background:url(../images/itinerary/item_count_sprite.html); background-position:-75px 0px; }
+				.itinerary_item:hover .item_count_4 { background-position:-75px 26px; }
+			.item_count_5 { background:url(../images/itinerary/item_count_sprite.html); background-position:-100px 0px; }
+				.itinerary_item:hover .item_count_5 { background-position:-100px 26px; }
+			.item_count_6 { background:url(../images/itinerary/item_count_sprite.html); background-position:-125px 0px; }
+				.itinerary_item:hover .item_count_6 { background-position:-125px 26px; }
+			.item_count_7 { background:url(../images/itinerary/item_count_sprite.html); background-position:-150px 0px; }
+				.itinerary_item:hover .item_count_7 { background-position:-150px 26px; }
+			.item_count_8 { background:url(../images/itinerary/item_count_sprite.html); background-position:-175px 0px; }
+				.itinerary_item:hover .item_count_8 { background-position:-175px 26px; }
+			.item_count_9 { background:url(../images/itinerary/item_count_sprite.html); background-position:-200px 0px; }
+				.itinerary_item:hover .item_count_9 { background-position:-200px 26px; }
+			.item_count_10 { background:url(../images/itinerary/item_count_sprite.html); background-position:-225px 0px; }
+				.itinerary_item:hover .item_count_10 { background-position:-225px 26px; }
+
+	.item_info { float:left; display:block; width:530px; margin:3px 0 0 0; color:#777777; }
+		.title { display:block;  }
+		a.title_text { font-weight:bold; font-size:13px; color:#777777; }
+		.itinerary_item:hover .item_info .title, .itinerary_item:hover .item_info a, .itinerary_item:hover .item_info button, .itinerary_item:hover .links { color:#005da9; visibility:visible; }
+		.links, .item_info button { visibility:hidden; font-size:10px; }
+
+	.item_icons { float:left; display:block; border:red; }
+
+
+#map_container { float:left; display:block; clear:both; margin:0 0 0 0; height:400px; width:589px; overflow:hidden; }
+	#map_canvas { width:589px; height:400px; }
+
+#directions_container { float:none; display:block; clear:both; width:589px; margin:25px 0 0 0; }
+	.directions_title_bar { background:#efefef; border:1px solid #ccc; min-height:25px; padding:10px; margin:15px 0 5px 0; display:block; clear:both; }
+		.directions_title_bar .item_count { margin:0 10px 0 0; }
+		.directions_title_text_holder { float:left; display:block; }
+		.directions_title_bar .distance { display:block; float:right; width:150px; }
+	.directions_instructions { margin-left:45px; line-height:15px; clear:both;  }
+		.directions_instructions .ordered_list { display:block; float:left; width:25px; }
+		.directions_instructions .instruction { display:block; float:left; width:410px; }
+		.directions_instructions .distance { display:block; float:left; width:100px; }
+
+#explore_box, #map_loading { display:none; }
+
+.prepackaged_list {
+	float:left;
+	width:300px;
+	margin:15px;
+}
+	.prepackagedListOfStopsIcon { float:left; width:30px; text-align:left;margin-top:10px; }
+	.prepackagedListOfStopsContent { float:left; width:270px; }
+	.prepackagedListOfStopsContent .title { font-weight:bold; font-size:100%; font-size:14px; margin-top:10px; margin-bottom:5px; }
+	#subpage_mainbox .prepackagedListOfStopsContent .desc { font-size:100%; font-size:14px; }
+
+.prepackaged_disclaimer {
+	background: #fff; /* for non-css3 browsers */
+	border-radius:5px 5px 0 0;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#E4F3FE'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#E4F3FE)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #ffffff,  #E4F3FE); /* for firefox 3.6+ */ 
+	display:block;
+	float:right;
+	clear:right;
+	width:221px;
+	height:160px;
+	padding:15px;
+	margin:15px;
+	text-align: center;
+}
+	
+	.prepackaged_disclaimer .title { font-size:14px; font-weight:bold; text-align:left; color:#e57712; }
+    
+	#subpage_mainbox .prepackaged_disclaimer p { font-size:12px; color:#444444; line-height:18px; padding-bottom:10px; }
+    #subpage_mainbox .prepackaged_disclaimer p.i { font-style:italic }
+
+    .prepackaged_disclaimer .l_blank_button { font-size:16px; float:left; }

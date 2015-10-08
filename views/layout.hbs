@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Chesapeake Country Blue Crab Byway | Lower Eastern Shore Heritage Area</title>
+    <!-- META DATA -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="The Official Website of the Lower Eastern Shore Heritage Council and the Blue Crab Scenic Byway" />
+    <meta name="keywords" content="chesapeake, atlantic, Maryland, scenic byway, blue crab, trip, travel, tour, tourism, event, heritage, history " />
+
+    <!-- CSS -->
+    <link href="css/reset_min.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="css/theme.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="css/print.css" type="text/css" rel="stylesheet" media="print" />
+    <link href="css/home.css" type="text/css" rel="stylesheet" media="screen" />
+    {{{block "css"}}}
+</head>
+
+<body>
+    <div id="body_container">
+        <div id="header_container">
+            <img src="var/skins/bluecrab_2010/images/common/bk-header-right.jpg" style="float:right;" />
+        </div>
+        <div id="outermostwrapper">
+            <div id="header" class="headfoot">
+                <a title="Chesapeake Country Blue Crab Byway" href="">
+                    <img src="var/skins/bluecrab_2010/images/common/logo.png" alt="Chesapeake Country Blue Crab Byway" style="border:none" />
+                </a>
+                <div id="header_menu_wrapper">
+                    <a class="tab" href="{{config.domain}}">
+                        <span class="left"></span>
+                        <span class="center">
+                            <img src="var/skins/bluecrab_2010/images/common/nav-home-button.png" class="nonhoverimg" alt="Home" style="margin-top:8px;" />
+                            <img src="var/skins/bluecrab_2010/images/common/nav-home-button-hover.png" class="hoverimg" alt="Home" style="margin-top:8px;" />
+                        </span>
+                        <span class="right"></span>
+                    </a>
+                    <table id="header_menu" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="about" class="tab">
+                                        <span class="left"></span>
+                                        <span class="center">About LESHC </span>
+                                        <span class="right"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="areasofinterest" class="tab">
+                                        <span class="left"></span>
+                                        <span class="center" style="padding-right:20px;">Areas of Interest
+                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-arrow.png" class="nonhoverimg" style="position:absolute;right:3px;top:13px;" />
+                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-hover.png" class="hoverimg" style="position:absolute;right:3px;top:13px;" />
+                                        </span>
+                                        <span class="right"></span>
+                                    </a>
+                                    <ul class="submenuUL">
+                                        {{#each sites.categories}}
+                                        <li class="submenuLI">
+                                            <a href="category/{{.}}">{{.}}</a>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+                                </td>
+                                <td>
+                                    <a href="category/13" class="tab">
+                                        <span class="left"></span>
+                                        <span class="center" style="padding-right:20px;">Towns
+                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-arrow.png" class="nonhoverimg" style="position:absolute;right:3px;top:13px;" />
+                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-hover.png" class="hoverimg" style="position:absolute;right:3px;top:13px;" />
+                                        </span>
+                                        <span class="right"></span>
+                                    </a>
+                                    <ul class="submenuUL">
+                                        {{#each sites.towns}}
+                                        <li class="submenuLI">
+                                            <a href="town/{{.}}">{{.}}</a>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+                                </td>
+                                <td>
+                                    <a href="routes" class="tab">
+                                        <span class="left"></span>
+                                        <span class="center" style="padding-right:20px;">Routes
+                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-arrow.png" class="nonhoverimg" style="position:absolute;right:3px;top:13px;" />
+                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-hover.png" class="hoverimg" style="position:absolute;right:3px;top:13px;" />
+                                        </span>
+                                        <span class="right"></span>
+                                    </a>
+                                    <ul class="submenuUL">
+                                      {{#each sites.routes}}
+                                      <li class="submenuLI">
+                                          <a href="routes/{{.}}">{{.}}</a>
+                                      </li>
+                                      {{/each}}
+                                    </ul>
+                                </td>
+                                <td>
+                                    <a href="static/4" class="tab">
+                                        <span class="left"></span>
+                                        <span class="center">Heritage Area </span>
+                                        <span class="right"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="contacts?type=contact" class="tab">
+                                        <span class="left"></span>
+                                        <span class="center">Contact Us </span>
+                                        <span class="right"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="container">
+              {{{ body }}}
+                <div id="footer">
+                  <p>&copy; Copyright 2013 &mdash; The Lower Eastern Shore Heritage Council </p>
+                </div>
+            </div><!--container-->
+
+        </div><!--outermostwrapper-->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    {{{block "scripts"}}}
+</body>
+</html>
