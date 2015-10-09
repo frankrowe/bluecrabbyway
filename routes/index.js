@@ -1,14 +1,63 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+
+var router = express.Router()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
-});
+  res.render('index')
+})
 
 router.get('/about', function(req, res, next) {
-  res.render('about');
-});
+  res.render('about')
+})
+
+router.get('/contact', function(req, res, next) {
+  res.render('contact')
+})
+
+router.get('/categories', function(req, res, next) {
+  res.render('categories')
+})
+
+router.get('/towns', function(req, res, next) {
+  res.render('towns')
+})
+
+router.get('/routes', function(req, res, next) {
+  res.render('routes')
+})
+
+router.get('/category/:category', function(req, res, next) {
+  var sites = req.app.locals.sites.getByCategory(req.params.category)
+  res.render('sitelist', {
+    category: req.params.category,
+    sites: sites
+  })
+})
+
+router.get('/town/:town', function(req, res, next) {
+  var sites = req.app.locals.sites.getByTown(req.params.town)
+  res.render('sitelist', {
+    category: req.params.town,
+    sites: sites
+  })
+})
+
+router.get('/route/:route', function(req, res, next) {
+  var sites = req.app.locals.sites.getByRoute(req.params.route)
+  res.render('sitelist', {
+    category: req.params.route,
+    sites: sites
+  })
+})
+
+router.get('/site/:name', function(req, res, next) {
+  var site = req.app.locals.sites.getByName(req.params.name)
+  console.log(site);
+  res.render('site', {
+    site: site
+  })
+})
 
 router.get('/sites', function(req, res, next) {
   var sites = []
@@ -24,4 +73,4 @@ router.get('/sites', function(req, res, next) {
   res.json(sites)
 })
 
-module.exports = router;
+module.exports = router

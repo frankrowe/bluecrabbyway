@@ -1,7 +1,7 @@
 var _ = require('lodash')
 
 function Sheet(data) {
-  this.data = data
+  this.data = this.parseData(data)
   this.categories = this.getCategories()
   this.towns = this.getTowns()
   this.routes = ['Ocean City to Princess Anne',
@@ -10,6 +10,14 @@ function Sheet(data) {
   'Snow Hill to Stockton',
   'Berlin to Assateague Island',
   'Princess Anne to Deal Island']
+}
+
+Sheet.prototype.parseData = function(data) {
+  data.forEach(function(row) {
+    row.photos = row.Photo.split(',')
+    row.websites = row.Website.split('\n')
+  })
+  return data
 }
 
 Sheet.prototype.getCategories = function() {
@@ -31,7 +39,7 @@ Sheet.prototype.getTowns = function() {
 Sheet.prototype.getByCategory = function(category) {
   var sites = []
   this.data.forEach(function(site) {
-    if (site.Category.split('/').indexOf(category) >= 0) {
+    if (site.Category.split('/').indexOf(category.trim()) >= 0) {
       sites.push(site)
     }
   })
@@ -41,7 +49,7 @@ Sheet.prototype.getByCategory = function(category) {
 Sheet.prototype.getByTown = function(town) {
   var sites = []
   this.data.forEach(function(site) {
-    if (site.City === town) {
+    if (site.City.trim() === town.trim()) {
       sites.push(site)
     }
   })
@@ -51,11 +59,22 @@ Sheet.prototype.getByTown = function(town) {
 Sheet.prototype.getByRoute = function(route) {
   var sites = []
   this.data.forEach(function(site) {
-    if (site.Route === route) {
+    if (site.Route.trim() === route.trim()) {
       sites.push(site)
     }
   })
   return sites
+}
+
+Sheet.prototype.getByName = function(name) {
+  var site = {}
+  this.data.forEach(function(_site) {
+    console.log(_site.Name, name,_site.Name === name );
+    if (_site.Name.trim() === name.trim()) {
+      site = _site
+    }
+  })
+  return site
 }
 
 module.exports = Sheet

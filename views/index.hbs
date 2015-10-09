@@ -5,21 +5,28 @@
 <div id="maincontent_top">
 
     <div id="top_module">
-        <img src="var/skins/bluecrab_2010/images/home/topmodule_left.png" alt="layout spacer" style="float:left;" />
+        <img src="{{config.domain}}/var/skins/bluecrab_2010/images/home/topmodule_left.png" alt="layout spacer" style="float:left;" />
         <div id="topmodule_center">
             <div id="text_box">
                 <h1>Blue Crab Byway</h1>
                 <p> An imperfect loop links Lower Eastern Shore towns to form the shell of the Blue Crab byway, while several branches extend out like stubby legs and curved claws toward the Chesapeake Bay and Atlantic Ocean.</p>
                 <br/>
                 <p>
-                    <a href="static/5" title="Explore the blue crab byway by route" onclick="_gaq.push(['_trackEvent', 'CampaignBanner', 'Image Click', 'Explore By Route']); ntptEventTag('ev=CampaignBanner | Image Click | Explore By Route'); setTimeout(function() { window.location='/static/5' },250);return false;">
-                        <img src="var/skins/bluecrab_2010/images/home/learn-more.png" alt="plus sign" align="left" style="margin-right:10px;" />Click here to learn more about each route of the Blue Crab Byway.</a>
+                    <a href="{{config.domain}}/routes" title="Explore the blue crab byway by route">
+                    <img src="{{config.domain}}/var/skins/bluecrab_2010/images/home/learn-more.png" alt="plus sign" align="left" style="margin-right:10px;" />Click here to learn more about each route of the Blue Crab Byway.</a>
                 </p>
             </div>
-            <!-- <img src="image/Download_on_the_App_Store_Badge_US-UK_135x40.svg" /> -->
-
+            <div id="app_feature">
+              <h1>Blue Crab Byway Mobile Tour Guide</h1>
+              <img class="iphone" src="image/iPhone-6s-Space-Gray-vertical.png" width="120" alt="" />
+              <div class="description">
+                <h2>New!</h2>
+                <p>Download the new Blue Crab Mobile Tour Guide iPhone app on the App Store. View interesting sites along on the Byway from anywhere!</p>
+                <p><a href=""><img class="appstore" src="image/Download_on_the_App_Store_Badge_US-UK_135x40.svg" /></a></p>
+              </div>
+            </div>
         </div>
-        <img src="var/skins/bluecrab_2010/images/home/topmodule_right.png" alt="layout spacer" style="float:right;" />
+        <img src="{{config.domain}}/var/skins/bluecrab_2010/images/home/topmodule_right.png" alt="layout spacer" style="float:right;" />
     </div>
 
     <div id="maincontent_middle">
@@ -45,8 +52,8 @@
                     <div id="routes_delimiter" class="delimiter_menu" style="display:block;">
                       {{#each sites.routes}}
                       <li class="submenuLI">
-                        <a id="{{.}}" type="route" class="delimiter_filter md_31" onmouseover="bywayMap.highlightRoute(id,true);" onmouseout="bywayMap.highlightRoute(id,false);" onclick="bywayMap.addRoute(id)" />
-                            {{.}}<img src="var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this route on the map" class="clearFilter" />
+                        <a id="{{.}}" type="route" class="delimiter_filter md_31" onmouseover="bywayMap.highlightRoute(id,true);" onmouseout="bywayMap.highlightRoute(id,false);" onclick="bywayMap.addRoute(this, id)" />
+                            {{.}}<img src="{{config.domain}}/var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this route on the map" class="clearFilter" />
                         </a>
                       </li>
                       {{/each}}
@@ -54,16 +61,16 @@
 
                     <div id="interests_delimiter" class="delimiter_menu">
                       {{#each sites.categories}}
-                      <a id="{{.}}" type="interest" class="delimiter_filter md_15" onclick="bywayMap.addCategory(id)" >
-                        {{.}}<img src="var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this category on the map" class="clearFilter" />
+                      <a id="{{.}}" type="interest" class="delimiter_filter md_15" onclick="bywayMap.addCategory(this, id)" >
+                        {{.}}<img src="{{config.domain}}/var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this category on the map" class="clearFilter" />
                       </a>
                       {{/each}}
                     </div>
 
                     <div id="towns_delimiter" class="delimiter_menu">
                       {{#each sites.towns}}
-                      <a id="{{.}}" type="interest" class="delimiter_filter md_15" onclick="bywayMap.addTown(id)" >
-                        {{.}}<img src="var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this category on the map" class="clearFilter" />
+                      <a id="{{.}}" type="interest" class="delimiter_filter md_15" onclick="bywayMap.addTown(this, id)" >
+                        {{.}}<img src="{{config.domain}}/var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this category on the map" class="clearFilter" />
                       </a>
                       {{/each}}
                     </div>
@@ -78,11 +85,11 @@
         <!-- byway_sidebar -->
 
         <div id="map_canvas"></div>
-
+        <img class="drive" src="{{config.domain}}/var/skins/bluecrab_2010/images/home/dbc_orangebutton.png" />
     </div>
 </div>
 
-{{#extend "css"}}
+{{#extend "scripts"}}
    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
    <script src="js/map.js"></script>
 {{/extend}}

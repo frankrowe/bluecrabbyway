@@ -17,7 +17,50 @@
 	height:219px;
 	width:882px;
 	background-image:url("../var/skins/bluecrab_2010/images/home/topmodule_center.png");
+	overflow: hidden;
 }
+#app_feature {
+	padding: 10px 10px 10px 10px;
+  margin: 20px 20px 25px 6px;
+  width: 500px;
+	float: right;
+	background: #f3f3e4;
+	border-radius: 5px;
+	overflow: hidden;
+	height: 155px;
+}
+
+#app_feature h1 {
+	color: #2f72a8;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	padding: 0;
+	float: left;
+}
+
+#app_feature img.appstore {
+	padding: 10px 0;
+}
+
+#app_feature .description {
+	width: 300px;
+	float: left;
+	clear: left;
+}
+
+#app_feature img.iphone {
+	float: right;
+}
+
+#app_feature h2 {
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#666666;
+	font-weight:bold;
+}
+
 #text_box h1, #byway_sidebar h1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size:16px;
@@ -28,7 +71,7 @@
 	margin-top:0px;
 	padding-top:0px;
 }
-#text_box p{
+#text_box p, #app_feature p {
 	line-height:1.5em;
 	color:#666666;
 }

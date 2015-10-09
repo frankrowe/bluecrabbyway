@@ -1,114 +1,29 @@
 <div id="maincontent_top">
-	<div id="sidebar">
+  {{> sidebar}}
 
 
-		<div id="sidebar_custom_itinerary_container">
-		<img src="../var/skins/bluecrab_2010/images/secondary/sidebar/custom_itinerary.png" alt="Custom Itinerary" width="212" height="36" />
-		<div id="itinerary_widget" class="inside">
-		<div id="itinerary_div" class="small_itinerary">
-<div id="itinerary_containment">
-
-<div style="padding:10px; " id="itinerary_intro" class="showWhenNoItemsAreAdded">
-	<p style="margin-left:10px;">Add up to nine destinations from the home page map or any attraction or event page to create your own customized itinerary.</p>
+  <div id="subpage_content">
+  <div id="subpage_titlebox">
+  <img src="{{config.domain}}/var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_farright.png" id="subpage_titlebox_far_right" />
+  <img src="{{config.domain}}/var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_left.png" id="subpage_titlebox_left" />
+      <div id="subpage_titlebox_center">
+    <h1>About LESHC</h1>
+    <img id="subpage_titlebox_middle_right_bottom" src="{{config.domain}}/var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_middle_right_bottom.png" />
+    <img id="subpage_titlebox_middle_right_top" src="{{config.domain}}/var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_middle_right_top.png" />
+  </div>
 </div>
 
-<ul id="itinerary_container" class="showWhenItemsAreAdded">
-</ul>
-	<div style="text-align:center; padding-top:7px;  display:none;" class="showWhenItemsAreAdded">
-	<button class="clear_itinerary_button" id="clear_itinerary_button" onclick="deleteItinerary(this)">&nbsp;</button>
-	</div>
-
-</div>
-</div>
-
-<a href="../itinerary/index.html" id="viewEditItinierary" class="showWhenItemsAreAdded" style="display:none">View / Edit your Itinerary</a>
-
-
-<script id="itinerary_item_template" type="text/x-jquery-tmpl">
-
-<li class="itinerary_item even" id="${type}${id}">
-	<table class="item_container">
-		<tr>
- 			<td class="item_count_holder"><div class="item_count item_count_1">&nbsp;</div></td>
- 			<td class="title" align="left"><a href="../%24%7btypeURL%7d/%24%7btitleURL%7d.html">${title}</a></td>
- 			<td class="remove"><a href="javascript:removeAttraction(${id},'widget')"><img src="http://wazzubnedir.com/var/skins/bluecrab_2010/images/itinerary/delete_hover.png" alt="Delete (Red X)" title="Remove ${title} from your itinerary?" /></a></td>
- 		</tr>
- 	</table>
-</li>
-
-</script>		</div>
-		<img src="../var/skins/bluecrab_2010/images/secondary/sidebar/rounded_corners.png" class="layoutImg" alt="Layout Image" width="212" height="10" />
-	</div>
-
-	<div id="sidebar_more_information">
-		<img src="../var/skins/bluecrab_2010/images/secondary/sidebar/more_info.png" alt="More Information" width="212" height="36" />
-			<div class="inside">
-		    <a href="../contacts/index9cd4.html?type=brochure">Mail Me a Brochure</a>
-		    <a href="../contacts/index973e.html?type=mailing">Join Our Mailing List</a>
-		    <a href="../contacts/index7ca0.html?type=contact">Contact Us</a>
-
-			<img src="../var/skins/bluecrab_2010/images/secondary/sidebar/md_logo.png" alt="Mayland Heritage Council" style="margin:10px auto 5px auto;" />
-			</div>
-		<img src="../var/skins/bluecrab_2010/images/secondary/sidebar/rounded_corners.png" class="layoutImg" alt="Layout Image" width="212" height="10" />
-	</div>
-</div>
-
-
-	<div id="subpage_content">
-		<div id="subpage_titlebox">
-		<img src="../var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_farright.png" id="subpage_titlebox_far_right" />
-		<img src="../var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_left.png" id="subpage_titlebox_left" />
-        <div id="subpage_titlebox_center">
-			<h1>Heritage Area</h1>
-			<img id="subpage_titlebox_middle_right_bottom" src="../var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_middle_right_bottom.png" />
-			<img id="subpage_titlebox_middle_right_top" src="../var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_middle_right_top.png" />
-		</div>
-	</div>
-
-    	<div id="subpage_mainbox" class="static_page">
-
-<p><img align="right" src="../var/skins/bluecrab_2010/images/secondary/heritage_area/top.png" class="side_pad" /><span class="textd9d9d9">&#9658;</span><a href="index.html#preservation" class="size16">Maryland Heritage Preservation</a>
-  <br /><span class="textd9d9d9">&#9658;</span><a href="index.html#leshcheritage" class="size16">Lower Eastern Shore Heritage Area</a>
-  <br /><span class="textd9d9d9">&#9658;</span><a href="index.html#howyoucanhelp" class="size16">How You can Help</a>
-  <br /><span class="textd9d9d9">&#9658;</span><a href="index.html#contactinfo" class="size16">Contact Information</a></p>
+    <div id="subpage_mainbox" class="static_page">
+    <img alt="Paper Clip" src="{{config.domain}}/var/skins/bluecrab_2010/images/secondary/paperclip.png" class="toppaperclip" /><img width="313" height="252" alt="Lower Eastern Shore Heritage Council" src="{{config.domain}}/var/files/images/about.png" style="WIDTH: 313px; HEIGHT: 252px" class="route" /><h2>Mission Statement</h2>
+<p>The Lower Eastern Shore Heritage Area Council is a grassroots, nonprofit organization whose purpose is to preserve, protect and promote the cultural, natural and historic heritage of Somerset, Wicomico and Worcester counties.</p><h2>Statement of Purpose</h2>
+<p>Through a variety of partnerships with individual citizens, representatives of various organizations, and public agencies, the Lower Eastern Shore Heritage Area Council works to blend economic development at the local level with the conservation of the area's natural, cultural and historic resources in a regional heritage area approach that will better serve all counties and municipalities on Maryland's Lower Eastern Shore.</p>
 <br />
-<br clear="all" /><h1 id="preservation">Maryland Heritage Preservation and Tourism Areas</h1>
-<p><img align="left" src="../var/skins/bluecrab_2010/images/secondary/heritage_area/mdtourism.png" class="r_pad" /></p>
-<p align="left">Maryland's Lower Eastern Shore is a rural region with a wealth of historic, cultural and natural resources that distinguish it from other places in the state and country. The lower shore counties of Somerset, Wicomico and Worcester encompass a vast region stretching from the shorelines of Tangier Sound and Chesapeake Bay to the washed beaches of the Atlantic seaboard.</p>
-<br clear="all" />
-<p><img align="right" src="../var/skins/bluecrab_2010/images/secondary/heritage_area/mdtourism2.png" class="l_pad" /></p>
-<p align="left">From earliest time, life on the Lower Eastern Shore has depended on the Atlantic Ocean, the Chesapeake Bay, its tributaries, the marshes and land between. Compelling evidence of past peoples and cultures reverberates throughout the various corners of the region. The Manokin, Nanticoke, Pocomoke and Wicomico Rivers and the outer bays connect the past and present, towns with history, and homes with open spaces.</p>
-<p>The seafood industry and agriculture have long formed the backbone of the lower shore economy and sustained a way of life built on the resources of land and water.  A number of factors have adversely affected these traditional industries over the past decade, decreasing the economic base of the area and threatening its rich heritage.</p>
-<br clear="all" /><h1 id="mdheritage">Maryland Heritage Areas</h1>
-<p><img align="left" src="../var/skins/bluecrab_2010/images/secondary/heritage_area/mdtourism3.png" class="r_pad" /></p>
-<p>Heritage areas are an approach to revitalization that combines heritage tourism and small business development with preservation, cultural conservation, recreation and education in a strategic effort to enhance a community economic activity.</p>
-<p>The State of Maryland Heritage Areas Authority oversees a program that provides matching grants to partnerships and private interests to develop management plans to guide public and private investments in the development of cultural tourism opportunities.</p>
-<p>Once such plans are adopted locally and accepted by the Authority and a locale becomes a Certified Heritage Area, its communities and businesses are eligible for targeted financial and technical assistance from the Authority and other state agencies.</p><h1 id="leshcheritage">Lower Eastern Shore Heritage Area</h1>
-<p>The Lower Eastern Shore Heritage Area Council has taken important steps in building a regional partnership of Wicomico, Worcester, and Somerset Counties in support of a Heritage Area. The Lower Eastern Shore Heritage Area Council was designated by the State of Maryland in 2002 as a Certified Heritage Area.&nbsp;</p>
-<p>Visit </p>
-<br clear="all" />
-<p><img align="right" src="../var/skins/bluecrab_2010/images/secondary/heritage_area/mdtourism4.png" class="l_pad" /></p>
-<p>To gain certification by the state and open the door to financial and technical assistance from state agencies, LESHC, through several months of detailed planning, developed an extensive management plan illustrating how the heritage area will enhance the quality of life on the Lower Eastern Shore and integrate quality of life issues with economic opportunity.</p>
+<p>The Lower Eastern Shore Heritage Area Council is the representative manager of the Blue Crab Scenic Byway,&nbsp;which spans&nbsp;210 miles over the 3 lower shore counties.&nbsp; The <em>Drive the Blue Crab</em> project has received funding&nbsp;from &nbsp;Maryland State Highway Association (SHA) &nbsp;and Maryland Heritage Area Authority (MHAA). To find out more about LESHC please visit</p>
 <p>&nbsp;</p>
-<p>The development of this Management Plan emphasizes leadership through community problem solving and is designed to address many of the issues facing the rural communities on the Lower Eastern Shore of Maryland.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p><h1 id="howyoucanhelp">How You Can Help</h1>
-<p>Our projects and operations&nbsp;depend, in part. on generous donors like yourself. You can help lead us into the future of the Lower Eastern Shore Heritage&nbsp;Area Council&nbsp;by sending a tax deductible contribution to:</p>
-<p id="contactinfo"><b>The Lower Eastern Shore Heritage Area Council</b>
-  <br />PO Box 4601 -Salisbury, MD 21803 / 212 West Main St, Suite 301C - Salisbury, MD 21801</p>
-<table width="100%">
-  <tbody>
-    <tr>
-      <td height="15">&nbsp;</td>
-      <td height="15">&nbsp;</td>
-    </tr>
-    <tr>
-      <td><span id="map_copyright">Funded (partially) by the FWHA National Scenic Byways Program,&nbsp;through the Maryland State Highway Administration.</span></td>
-      <td><span id="map_copyright"><img src="../var/skins/bluecrab_2010/images/secondary/funders.png" style="FLOAT: right" /></span></td>
-    </tr>
-  </tbody>
-</table>
-		</div>
-		<img src="../var/skins/bluecrab_2010/images/secondary/subpage_footer.png" alt="layout spacer" />
-	</div>
+<p style="LINE-HEIGHT: 18px; FONT-SIZE: 11px"><span id="map_copyright">Funded (partially) by the FWHA National Scenic Byways Program, through&nbsp;</span>
+<br /><span id="map_copyright">the Maryland State Highway Administration, and Maryland Heritage Area Authority.&nbsp;</span>
+<br /><span id="map_copyright">LESHC is a 501(c)3 non-profit organization recognized by the State of Maryland.&nbsp;</span></p>
+  </div>
+  <img src="{{config.domain}}/var/skins/bluecrab_2010/images/secondary/subpage_footer.png" alt="layout spacer" />
+</div>
 </div>

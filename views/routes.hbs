@@ -1,0 +1,33 @@
+<div id="maincontent_top">
+  {{> sidebar}}
+
+
+	<div id="subpage_content">
+		<div id="subpage_titlebox">
+		<img src="../var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_farright.png" id="subpage_titlebox_far_right" />
+		<img src="../var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_left.png" id="subpage_titlebox_left" />
+        <div id="subpage_titlebox_center">
+			<h1>Routes</h1>
+			<img id="subpage_titlebox_middle_right_bottom" src="../var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_middle_right_bottom.png" />
+			<img id="subpage_titlebox_middle_right_top" src="../var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_middle_right_top.png" />
+		</div>
+	</div>
+
+    <div id="subpage_mainbox" class="static_page">
+      <div id="route_container">
+	<img alt="Paper Clip" class="toppaperclip" src="http://wazzubnedir.com/var/skins/bluecrab_2010/images/routes/paperclip.png"> <img alt="Blue Crab Byway" class="route" src="http://wazzubnedir.com/var/skins/bluecrab_2010/images/routes/all.png">
+	<h2>
+		Explore the Roads Less Traveled</h2>
+	<p>
+		No other byway, when viewed on a map, can dare to claim an actual physical resemblance to its name! . An imperfect loop links Princess Anne, Snow Hill, Salisbury and other Lower Eastern Shore towns to form the shell of the Blue Crab Byway, while several branches extend out like stubby legs and curved claws toward the Chesapeake Bay and Atlantic Ocean.</p>
+	<br>
+	<p>
+		Use the links below to learn more about each route of the Blue Crab Byway:</p>
+	</div>
+      {{#each sites.routes}}
+          <p><a href="{{config.domain}}/town/{{.}}">{{.}}</a></p>
+      {{/each}}
+    </div>
+		<img src="../var/skins/bluecrab_2010/images/secondary/subpage_footer.png" alt="layout spacer" />
+	</div>
+</div>

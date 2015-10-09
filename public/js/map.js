@@ -1,6 +1,6 @@
-window.onload = function() {
+$(document).ready(function() {
   window.bywayMap = new BywayMap()
-}
+})
 
 function BywayMap () {
   this.makeMap()
@@ -8,8 +8,8 @@ function BywayMap () {
 
 BywayMap.prototype.makeMap = function() {
   var self = this
-  this.map = L.map('map_canvas').setView([38, -75], 8);
-  var OpenStreetMap_Mapnik_url = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  this.map = L.map('map_canvas').setView([38.2, -75.4], 9);
+  var OpenStreetMap_Mapnik_url = 'http://{s}.tiles.mapbox.com/v3/fsrw.j1f1fdcb/{z}/{x}/{y}.png',
     OpenStreetMap_Mapnik_attribution= '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 
   var osm = L.tileLayer(OpenStreetMap_Mapnik_url, { attribution : OpenStreetMap_Mapnik_attribution})
@@ -76,24 +76,30 @@ BywayMap.prototype.highlightRoute = function(id, toggle) {
   }
 }
 
-BywayMap.prototype.addRoute = function(id) {
+BywayMap.prototype.addRoute = function(el, id) {
   var self = this
+  $('.delimiter_filter').removeClass('active')
+  $(el).addClass('active')
   $.getJSON('sites?route=' + id, function(json) {
     self.sites.clearLayers()
     self.addSites(json)
   })
 }
 
-BywayMap.prototype.addCategory = function(id) {
+BywayMap.prototype.addCategory = function(el, id) {
   var self = this
+  $('.delimiter_filter').removeClass('active')
+  $(el).addClass('active')
   $.getJSON('sites?category=' + id, function(json) {
     self.sites.clearLayers()
     self.addSites(json)
   })
 }
 
-BywayMap.prototype.addTown = function(id) {
+BywayMap.prototype.addTown = function(el, id) {
   var self = this
+  $('.delimiter_filter').removeClass('active')
+  $(el).addClass('active')
   $.getJSON('sites?town=' + id, function(json) {
     self.sites.clearLayers()
     self.addSites(json)
@@ -105,22 +111,22 @@ BywayMap.prototype.addSites = function(json) {
   json.forEach(function(site) {
     if (site.location) {
       var latlng = site.location.split(',').map(Number)
-      console.log(latlng);
-      L.marker(latlng).bindPopup(site.Name).addTo(self.sites)
+      var popup = '<p>' + site.Name + '</p>'
+       + '<p><a href="site/' + site.Name + '" target="_blank">More Information</a></p>'
+      L.marker(latlng).bindPopup(popup).addTo(self.sites)
     }
   })
 }
 
 BywayMap.prototype.resetMap = function() {
+  $('.delimiter_filter').removeClass('active')
   this.sites.clearLayers()
 }
 
 BywayMap.prototype.mapDelimiter = function(el, tab) {
-  console.log(el);
   $('.delimiter_menu').hide()
   $('#' + tab + '_delimiter').show()
   $('.map_tab_delimiter_selected').addClass('map_tab_delimiter_link')
   $('.map_tab_delimiter_selected').removeClass('map_tab_delimiter_selected')
   $(el).parent().addClass('map_tab_delimiter_selected')
-
 }

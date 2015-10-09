@@ -10,29 +10,30 @@
     <meta name="keywords" content="chesapeake, atlantic, Maryland, scenic byway, blue crab, trip, travel, tour, tourism, event, heritage, history " />
 
     <!-- CSS -->
-    <link href="css/reset_min.css" type="text/css" rel="stylesheet" media="screen" />
-    <link href="css/theme.css" type="text/css" rel="stylesheet" media="screen" />
-    <link href="css/print.css" type="text/css" rel="stylesheet" media="print" />
-    <link href="css/home.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="{{config.domain}}/css/reset_min.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="{{config.domain}}/css/theme.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="{{config.domain}}/css/print.css" type="text/css" rel="stylesheet" media="print" />
+    <link href="{{config.domain}}/css/home.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="{{config.domain}}/css/style.css" type="text/css" rel="stylesheet" media="screen" />
     {{{block "css"}}}
 </head>
 
 <body>
     <div id="body_container">
         <div id="header_container">
-            <img src="var/skins/bluecrab_2010/images/common/bk-header-right.jpg" style="float:right;" />
+            <img src="{{config.domain}}/var/skins/bluecrab_2010/images/common/bk-header-right.jpg" style="float:right;" />
         </div>
         <div id="outermostwrapper">
             <div id="header" class="headfoot">
-                <a title="Chesapeake Country Blue Crab Byway" href="">
-                    <img src="var/skins/bluecrab_2010/images/common/logo.png" alt="Chesapeake Country Blue Crab Byway" style="border:none" />
+                <a title="Chesapeake Country Blue Crab Byway" href="{{config.domain}}">
+                    <img src="{{config.domain}}/var/skins/bluecrab_2010/images/common/logo.png" alt="Chesapeake Country Blue Crab Byway" style="border:none" />
                 </a>
                 <div id="header_menu_wrapper">
                     <a class="tab" href="{{config.domain}}">
                         <span class="left"></span>
                         <span class="center">
-                            <img src="var/skins/bluecrab_2010/images/common/nav-home-button.png" class="nonhoverimg" alt="Home" style="margin-top:8px;" />
-                            <img src="var/skins/bluecrab_2010/images/common/nav-home-button-hover.png" class="hoverimg" alt="Home" style="margin-top:8px;" />
+                            <img src="{{config.domain}}/var/skins/bluecrab_2010/images/common/nav-home-button.png" class="nonhoverimg" alt="Home" style="margin-top:8px;" />
+                            <img src="{{config.domain}}/var/skins/bluecrab_2010/images/common/nav-home-button-hover.png" class="hoverimg" alt="Home" style="margin-top:8px;" />
                         </span>
                         <span class="right"></span>
                     </a>
@@ -40,72 +41,65 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <a href="about" class="tab">
+                                    <a href="{{config.domain}}/about" class="tab">
                                         <span class="left"></span>
                                         <span class="center">About LESHC </span>
                                         <span class="right"></span>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="areasofinterest" class="tab">
+                                    <a href="{{config.domain}}/categories" class="tab">
                                         <span class="left"></span>
                                         <span class="center" style="padding-right:20px;">Areas of Interest
-                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-arrow.png" class="nonhoverimg" style="position:absolute;right:3px;top:13px;" />
-                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-hover.png" class="hoverimg" style="position:absolute;right:3px;top:13px;" />
+                                            <img src="{{config.domain}}/var/skins/bluecrab_2010/images/common/nav-drop-down-arrow.png" class="nonhoverimg" style="position:absolute;right:3px;top:13px;" />
+                                            <img src="{{config.domain}}/var/skins/bluecrab_2010/images/common/nav-drop-down-hover.png" class="hoverimg" style="position:absolute;right:3px;top:13px;" />
                                         </span>
                                         <span class="right"></span>
                                     </a>
                                     <ul class="submenuUL">
-                                        {{#each sites.categories}}
+                                        {{#each @sites.categories}}
                                         <li class="submenuLI">
-                                            <a href="category/{{.}}">{{.}}</a>
+                                            <a href="{{config.domain}}/category/{{.}}">{{.}}</a>
                                         </li>
                                         {{/each}}
                                     </ul>
                                 </td>
                                 <td>
-                                    <a href="category/13" class="tab">
+                                    <a href="{{config.domain}}/towns" class="tab">
                                         <span class="left"></span>
                                         <span class="center" style="padding-right:20px;">Towns
-                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-arrow.png" class="nonhoverimg" style="position:absolute;right:3px;top:13px;" />
-                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-hover.png" class="hoverimg" style="position:absolute;right:3px;top:13px;" />
+                                            <img src="{{config.domain}}/var/skins/bluecrab_2010/images/common/nav-drop-down-arrow.png" class="nonhoverimg" style="position:absolute;right:3px;top:13px;" />
+                                            <img src="{{config.domain}}/var/skins/bluecrab_2010/images/common/nav-drop-down-hover.png" class="hoverimg" style="position:absolute;right:3px;top:13px;" />
                                         </span>
                                         <span class="right"></span>
                                     </a>
                                     <ul class="submenuUL">
-                                        {{#each sites.towns}}
+                                        {{#each @sites.towns}}
                                         <li class="submenuLI">
-                                            <a href="town/{{.}}">{{.}}</a>
+                                            <a href="{{config.domain}}/town/{{.}}">{{.}}</a>
                                         </li>
                                         {{/each}}
                                     </ul>
                                 </td>
                                 <td>
-                                    <a href="routes" class="tab">
+                                    <a href="{{config.domain}}/routes" class="tab">
                                         <span class="left"></span>
                                         <span class="center" style="padding-right:20px;">Routes
-                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-arrow.png" class="nonhoverimg" style="position:absolute;right:3px;top:13px;" />
-                                            <img src="var/skins/bluecrab_2010/images/common/nav-drop-down-hover.png" class="hoverimg" style="position:absolute;right:3px;top:13px;" />
+                                            <img src="{{config.domain}}/var/skins/bluecrab_2010/images/common/nav-drop-down-arrow.png" class="nonhoverimg" style="position:absolute;right:3px;top:13px;" />
+                                            <img src="{{config.domain}}/var/skins/bluecrab_2010/images/common/nav-drop-down-hover.png" class="hoverimg" style="position:absolute;right:3px;top:13px;" />
                                         </span>
                                         <span class="right"></span>
                                     </a>
                                     <ul class="submenuUL">
-                                      {{#each sites.routes}}
+                                      {{#each @sites.routes}}
                                       <li class="submenuLI">
-                                          <a href="routes/{{.}}">{{.}}</a>
+                                          <a href="{{config.domain}}/route/{{.}}">{{.}}</a>
                                       </li>
                                       {{/each}}
                                     </ul>
                                 </td>
                                 <td>
-                                    <a href="static/4" class="tab">
-                                        <span class="left"></span>
-                                        <span class="center">Heritage Area </span>
-                                        <span class="right"></span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="contacts?type=contact" class="tab">
+                                    <a href="{{config.domain}}/contact" class="tab">
                                         <span class="left"></span>
                                         <span class="center">Contact Us </span>
                                         <span class="right"></span>

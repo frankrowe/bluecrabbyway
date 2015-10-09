@@ -1,0 +1,9 @@
+.site img {
+  max-width: 100%;
+}
+
+img.drive {
+  bottom: 10px;
+  position: absolute;
+  right: 35px;
+}
