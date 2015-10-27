@@ -49,6 +49,11 @@
         {{site.Zip}}<br>
         </p>
 
+        <p><h2>More Information</h2></p>
+        {{#each site.websites}}
+        <a href="{{.}}">{{.}}</a><br>
+        {{/each}}
+
       </div>
     </div>
 		<img src="{{config.domain}}/var/skins/bluecrab_2010/images/secondary/subpage_footer.png" alt="layout spacer" />
