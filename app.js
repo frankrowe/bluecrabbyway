@@ -82,20 +82,11 @@ app.use(function(err, req, res, next) {
 var key = '1AS60Zm5ytMoOI3AhvR0dcOF-G_3j2lpZR7VRBAzfBgE'
 
 app.init = function(next) {
-  fs.readFile('./config/sheet.json', 'utf8', function(err, data) {
-    app.locals.sites = new Sheet(JSON.parse(data))
-    app.locals.foo = 'bar'
+  var sheet = new Sheet(app)
+  sheet.refresh(function() {
+    app.locals.sites = sheet
     next()
   })
-  // var sheet = Tabletop.init({
-  //   key: key,
-  //   callback: function(data, tabletop) {
-  //     fs.writeFileSync('./config/sheet.json', JSON.stringify(data))
-  //     app.locals.sheet = data
-  //     next()
-  //   },
-  //   simpleSheet: true
-  // })
 }
 
 module.exports = app;

@@ -1,6 +1,12 @@
 var express = require('express')
+var fs = require('fs')
+var Tabletop = require('tabletop');
+var Sheet = require('../models/sheet')
+
+var key = '1AS60Zm5ytMoOI3AhvR0dcOF-G_3j2lpZR7VRBAzfBgE'
 
 var router = express.Router()
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
