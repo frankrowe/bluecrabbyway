@@ -90,15 +90,23 @@ Sheet.prototype.refresh = function(next) {
   var self = this
   var sheet = Tabletop.init({
     key: this.key,
-    callback: function(data, tabletop) {
-      console.log('got new data');
-      fs.writeFileSync('./config/sheet.json', JSON.stringify(data))
-      self.data = self.parseData(data)
-      self.categories = self.getCategories()
-      self.towns = self.getTowns()
-      next()
-      // app.locals.sheet = data
-      // next()
+    callback: function(data, tabletop, err) {
+      if (err) {
+        fs.readFile('./config/sheet.json', 'utf8', function(err, data) {
+          if (data) {
+            self.data = self.parseData(JSON.parse(data))
+            self.categories = self.getCategories()
+            self.towns = self.getTowns()
+          }
+          next()
+        })
+      } else {
+        fs.writeFileSync('./config/sheet.json', JSON.stringify(data))
+        self.data = self.parseData(data)
+        self.categories = self.getCategories()
+        self.towns = self.getTowns()
+        next()
+      }
     },
     simpleSheet: true
   })
