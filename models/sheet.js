@@ -22,7 +22,7 @@ function Sheet(app) {
 
 Sheet.prototype.parseData = function(data) {
   data.forEach(function(row) {
-    row.photos = row.Photo.split(',')
+    row.photos = row.Photo.split('\n')
     row.websites = row.Website.split('\n')
   })
   return data
