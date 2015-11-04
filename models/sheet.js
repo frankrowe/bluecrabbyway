@@ -33,6 +33,7 @@ Sheet.prototype.getCategories = function() {
   this.data.forEach(function(site) {
     cats = cats.concat(site.Category.split('/'))
   })
+  cats = cats.map(Function.prototype.call, String.prototype.trim)
   return _.uniq(cats)
 }
 
@@ -41,6 +42,7 @@ Sheet.prototype.getTowns = function() {
   this.data.forEach(function(site) {
     cats.push(site.City)
   })
+  cats = cats.map(Function.prototype.call, String.prototype.trim)
   return _.compact(_.uniq(cats))
 }
 
