@@ -48,6 +48,9 @@ Sheet.prototype.getTowns = function() {
 
 Sheet.prototype.getByCategory = function(category) {
   var sites = []
+  if (category === 'all') {
+    return this.data
+  }
   this.data.forEach(function(site) {
     if (site.Category.split('/').indexOf(category.trim()) >= 0) {
       sites.push(site)
@@ -58,6 +61,9 @@ Sheet.prototype.getByCategory = function(category) {
 
 Sheet.prototype.getByTown = function(town) {
   var sites = []
+  if (town === 'all') {
+    return this.data
+  }
   this.data.forEach(function(site) {
     if (site.City.trim() === town.trim()) {
       sites.push(site)
