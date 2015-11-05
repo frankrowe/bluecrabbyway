@@ -5,11 +5,10 @@
 <div id="maincontent_top">
 
     <div id="top_module">
-        <img src="{{config.domain}}/var/skins/bluecrab_2010/images/home/topmodule_left.png" alt="layout spacer" style="float:left;" />
         <div id="topmodule_center">
             <div id="text_box">
-                <h1>Blue Crab Byway</h1>
-                <p> An imperfect loop links Lower Eastern Shore towns to form the shell of the Blue Crab byway, while several branches extend out like stubby legs and curved claws toward the Chesapeake Bay and Atlantic Ocean.</p>
+                <p>The <b>Chesapeake Country Blue Crab Byway</b> takes you on a 210 mile journey from the Nanticoke River toward the urban center of the region, Salisbury where history and culture mingle, to Princess Anne featuring the 200 year old neoclassical Teackle Mansion, to Deal Island wildlife management area where wildlife abounds, to the southernmost spot of Crisfield  famous for the Crab Derby to Smith Island home of the MD State Dessert Smith Island Cake.</p><br>
+                <p>A unique, imperfect loop that links Lower Eastern Shore historic towns and quaint villages to form the shell of the Blue Crab byway, while several branches extend out like stubby legs and curved claws toward the Chesapeake Bay and Atlantic Ocean toward Pocomoke, Berlin and Ocean City. </p>
                 <br/>
             </div>
             <div id="app_feature">
@@ -22,7 +21,6 @@
               </div>
             </div>
         </div>
-        <img src="{{config.domain}}/var/skins/bluecrab_2010/images/home/topmodule_right.png" alt="layout spacer" style="float:right;" />
     </div>
 
     <div id="maincontent_middle">
@@ -56,6 +54,11 @@
                     </div> -->
 
                     <div id="interests_delimiter" class="delimiter_menu" style="display:block;">
+                      <li class="submenuLI">
+                      <a id="all" type="interest" class="delimiter_filter md_15" onclick="bywayMap.addCategory(this, id)" >
+                        All<img src="{{config.domain}}/var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this category on the map" class="clearFilter" />
+                      </a>
+                      </li>
                       {{#each sites.categories}}
                       <li class="submenuLI">
                       <a id="{{.}}" type="interest" class="delimiter_filter md_15" onclick="bywayMap.addCategory(this, id)" >
@@ -66,6 +69,11 @@
                     </div>
 
                     <div id="towns_delimiter" class="delimiter_menu">
+                      <li class="submenuLI">
+                      <a id="all" type="interest" class="delimiter_filter md_15" onclick="bywayMap.addCategory(this, id)" >
+                        All<img src="{{config.domain}}/var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this category on the map" class="clearFilter" />
+                      </a>
+                      </li>
                       {{#each sites.towns}}
                       <a id="{{.}}" type="interest" class="delimiter_filter md_15" onclick="bywayMap.addTown(this, id)" >
                         {{.}}<img src="{{config.domain}}/var/skins/bluecrab_2010/images/home/map_delimiter_hover.png" alt="X button" title="Do not show this category on the map" class="clearFilter" />

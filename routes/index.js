@@ -17,6 +17,10 @@ router.get('/about', function(req, res, next) {
   res.render('about')
 })
 
+router.get('/aboutbyways', function(req, res, next) {
+  res.render('aboutbyways')
+})
+
 router.get('/contact', function(req, res, next) {
   res.render('contact')
 })

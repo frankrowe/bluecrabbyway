@@ -1,24 +1,23 @@
 #top_module{
 	width:912px;
-	height:219px;
 	margin:0;
 	z-index: 1;
 	position: relative;
+	border-radius: 20px;
+	background: #faf9f4;
 }
 #text_box{
-	padding:20px 20px 25px 6px;
+	padding:20px;
 	margin-left:auto;
 	margin-right:auto;
 	float:left;
-	width:245px;
+	width:320px;
 }
-#topmodule_center {
-	float:left;
-	height:219px;
-	width:882px;
-	background-image:url("../var/skins/bluecrab_2010/images/home/topmodule_center.png");
-	overflow: hidden;
+
+#text_box h1 {
+	color: #266ea9;
 }
+
 #app_feature {
 	padding: 10px 10px 10px 10px;
   margin: 20px 20px 25px 6px;
@@ -64,7 +63,7 @@
 #text_box h1, #byway_sidebar h1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size:16px;
-	color:#666666;
+	color:#266ea9;
 	font-weight:bold;
 	padding-bottom:10px;
 	margin-bottom:0px;
