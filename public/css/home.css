@@ -12,6 +12,9 @@
 	margin-right:auto;
 	float:left;
 	width:320px;
+	color: #333;
+  font-size: 1.4em;
+  line-height: 1.5em;
 }
 
 #text_box h1 {
