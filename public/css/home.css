@@ -11,7 +11,7 @@
 	margin-left:auto;
 	margin-right:auto;
 	float:left;
-	width:320px;
+	width:310px;
 	color: #333;
   font-size: 1.4em;
   line-height: 1.5em;
@@ -19,6 +19,11 @@
 
 #text_box h1 {
 	color: #266ea9;
+}
+
+#home-image {
+	float: right;
+	margin: 20px;
 }
 
 #app_feature {
