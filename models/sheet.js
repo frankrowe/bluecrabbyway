@@ -22,8 +22,8 @@ function Sheet(app) {
 
 Sheet.prototype.parseData = function(data) {
   data.forEach(function(row) {
-    row.photos = row.Photo.split('\n')
-    row.websites = row.Website.split('\n')
+    row.photos = _.compact(row.Photo.split('\n'))
+    row.websites = _.compact(row.Website.split('\n'))
   })
   return data
 }

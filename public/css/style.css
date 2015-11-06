@@ -7,3 +7,8 @@ img.drive {
   position: absolute;
   right: 35px;
 }
+
+.site #map {
+  height: 300px;
+  width: 100%;
+}
