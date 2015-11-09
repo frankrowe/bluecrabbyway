@@ -21,9 +21,34 @@
 	color: #266ea9;
 }
 
-#home-image {
+.home-image {
+	display: block;
 	float: right;
+	width: 520px;
 	margin: 20px;
+	position: relative;
+	/* Remove the parts of the circle that is outside of the image */
+	overflow:hidden;
+}
+
+.home-image:after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    /* Add more width */
+    width: 130%;
+    /* To form a square, the padding-bottom, needs to have the same value as the width property */
+    padding-bottom: 130%;
+    box-shadow: inset 0px 0px 150px 60px rgba(0,0,0,0);
+    border-radius: 50%;
+}
+
+.home-image img {
+		border-radius: 10px;
+    max-width: 100%;
+    display: block;
 }
 
 #app_feature {
