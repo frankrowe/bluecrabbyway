@@ -24,6 +24,7 @@ Sheet.prototype.parseData = function(data) {
   data.forEach(function(row) {
     row.photos = _.compact(row.Photo.split('\n'))
     row.websites = _.compact(row.Website.split('\n'))
+    row.DescriptionLong = row.DescriptionLong.split('\n').join('</p><p>')
   })
   return data
 }
