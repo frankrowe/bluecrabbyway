@@ -1,3 +1,10 @@
+/*
+*  Build script
+*  - Run once to build static site.
+*  - Leave script running to fetch new data from Google Sheets
+*    every 30 minutes.
+*/
+
 var path = require('path')
 var fs = require('fs')
 var handlebars = require('handlebars')
@@ -33,9 +40,6 @@ handlebars.registerHelper('domain', function(block) {
 })
 
 var page_dir = path.join(root, 'templates/pages/')
-
-var sheet = new Sheet()
-sheet.refresh(build)
 
 function build() {
   console.log('building');
@@ -97,3 +101,7 @@ function renderSites() {
     fs.writeFile(path.join(root, 'site/' + site.id + '.html'), html)
   })
 }
+
+// fetch data, build
+var sheet = new Sheet()
+sheet.refresh(build)
