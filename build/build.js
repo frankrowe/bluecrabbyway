@@ -3,8 +3,8 @@ var fs = require('fs')
 var handlebars = require('handlebars')
 var Sheet = require('./sheet')
 
-var domain = 'http://localhost:8080/bluecrabbyway'
-//var domain = 'http://apps.esrgc.org/bluecrabbyway'
+//var domain = 'http://localhost:8080/bluecrabbyway'
+var domain = 'http://apps.esrgc.org/bluecrabbyway'
 
 var root = path.resolve(__dirname, '..')
 
