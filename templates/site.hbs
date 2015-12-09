@@ -1,0 +1,102 @@
+{{#extend "css"}}
+<link rel="stylesheet" href="{{domain}}/js/owl-carousel/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="{{domain}}/js/owl-carousel/owl-carousel/owl.theme.css">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+<style>
+  #slider {
+    width: 100%;
+  }
+
+  #slider img {
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+{{/extend}}
+{{> header}}
+
+<div id="maincontent_top">
+  {{> sidebar}}
+
+
+	<div id="subpage_content">
+		<div id="subpage_titlebox">
+		<img src="{{domain}}/var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_farright.png" id="subpage_titlebox_far_right" />
+		<img src="{{domain}}/var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_left.png" id="subpage_titlebox_left" />
+        <div id="subpage_titlebox_center">
+			<h1>{{site.Name}}</h1>
+			<img id="subpage_titlebox_middle_right_bottom" src="{{domain}}/var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_middle_right_bottom.png" />
+			<img id="subpage_titlebox_middle_right_top" src="{{domain}}/var/skins/bluecrab_2010/images/secondary/subpage_titlebar/subpage_titlebar_middle_right_top.png" />
+		</div>
+	</div>
+
+    <div id="subpage_mainbox" class="static_page">
+      <div class="site">
+        <div id="slider" class="owl-carousel">
+        {{#each site.photos}}
+        <img src="{{.}}" />
+        {{/each}}
+        </div>
+        <br />
+        <p>
+        {{{site.DescriptionLong}}}
+        </p>
+
+        {{#if site.DateOfSite}}
+        <p><h2>Date</h2></p>
+        <p>{{site.DateOfSite}}</p>
+        {{/if}}
+
+        <p><h2>Address</h2></p>
+        <p>{{site.StreetAddress1}}<br>
+        {{site.City}}, {{site.State}}<br>
+        {{site.Zip}}<br>
+        </p>
+
+        {{#if site.websites}}
+        <p><h2>More Information</h2></p>
+        {{#each site.websites}}
+        <a href="{{.}}">{{.}}</a><br>
+        {{/each}}
+        {{/if}}
+
+        <h2>Location</h2>
+
+        <div id="map"></div>
+
+      </div>
+    </div>
+		<img src="{{domain}}/var/skins/bluecrab_2010/images/secondary/subpage_footer.png" alt="layout spacer" />
+	</div>
+</div>
+{{#extend "scripts"}}
+<script src="{{domain}}/js/owl-carousel/owl-carousel/owl.carousel.min.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+<script>
+$(document).ready(function() {
+
+  $("#slider").owlCarousel({
+    navigation : true, // Show next and prev buttons
+    slideSpeed : 300,
+    paginationSpeed : 400,
+    singleItem:true,
+    autoHeight: true
+  });
+  var location = '{{site.location}}'
+  if (location) {
+   location = location.split(',').map(Number)
+   console.log(location);
+
+    var map = L.map('map').setView(location, 9);
+    var OpenStreetMap_Mapnik_url = 'http://{s}.tiles.mapbox.com/v3/fsrw.j1f1fdcb/{z}/{x}/{y}.png',
+     OpenStreetMap_Mapnik_attribution= '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+
+    var osm = L.tileLayer(OpenStreetMap_Mapnik_url, { attribution : OpenStreetMap_Mapnik_attribution})
+    map.addLayer(osm)
+    var marker = L.marker(location).addTo(map)
+    marker.bindPopup('{{site.Name}}')
+  }
+})
+</script>
+{{/extend}}
+{{> footer}}
