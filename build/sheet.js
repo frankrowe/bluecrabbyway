@@ -13,12 +13,6 @@ function Sheet() {
   'Snow Hill to Stockton',
   'Berlin to Assateague Island',
   'Princess Anne to Deal Island']
-
-  var self = this
-  var minutes = 30, the_interval = minutes * 60 * 1000
-  setInterval(function() {
-    self.refresh(function() {})
-  }, the_interval)
 }
 
 Sheet.prototype.parseData = function(data) {
