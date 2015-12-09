@@ -1,6 +1,9 @@
 var _ = require('lodash')
 var Tabletop = require('tabletop')
 var fs = require('fs')
+var path = require('path')
+
+var root = path.resolve(__dirname, '..')
 
 function Sheet() {
   this.key = '1AS60Zm5ytMoOI3AhvR0dcOF-G_3j2lpZR7VRBAzfBgE'
@@ -100,7 +103,7 @@ Sheet.prototype.refresh = function(next) {
     key: this.key,
     callback: function(data, tabletop, err) {
       if (err) {
-        fs.readFile('../data.json', 'utf8', function(err, data) {
+        fs.readFile(path.join(root, 'data.json'), 'utf8', function(err, data) {
           if (data) {
             self.data = self.parseData(JSON.parse(data))
             self.categories = self.getCategories()
@@ -109,11 +112,11 @@ Sheet.prototype.refresh = function(next) {
           next()
         })
       } else {
-        fs.writeFileSync('../data.json', JSON.stringify(data))
+        fs.writeFileSync(path.join(root, 'data.json'), JSON.stringify(data))
         self.data = self.parseData(data)
         self.categories = self.getCategories()
         self.towns = self.getTowns()
-        fs.writeFileSync('../js/sheet.json', JSON.stringify(self.data))
+        fs.writeFileSync(path.join(root, 'js/sheet.json'), JSON.stringify(self.data))
         next()
       }
     },
