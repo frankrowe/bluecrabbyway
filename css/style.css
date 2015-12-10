@@ -12,3 +12,15 @@ img.drive {
   height: 300px;
   width: 100%;
 }
+
+#maincontent_middle .legend {
+  position: absolute;
+  right: 35px;
+  top: 0;
+  padding: 5px;
+}
+
+#maincontent_middle .legend p {
+  text-align: right;
+  font-weight: bold;
+}

@@ -21,6 +21,38 @@ BywayMap.prototype.makeMap = function() {
   this.sites = L.featureGroup()
   this.sites.addTo(this.map)
 
+  $('.legend').on('click', 'input', function() {
+    var r = $(this).val()
+    if (!$(this).is(':checked')) {
+      self.map.removeLayer(self.routes[r])
+    } else {
+      self.map.addLayer(self.routes[r])
+    }
+  })
+
+  $.when($.getJSON('js/bluecrab.json'), $.getJSON('js/capetocape.json'), $.getJSON('js/chesapeakecountry.json'))
+  .done(function(a, b, c) {
+    self.routes['Blue Crab'] = L.geoJson(a[0], {
+      style: {
+        color: '#757c9d',
+        opacity: .7
+      }
+    }).addTo(self.map)
+    self.routes['Cape to Cape'] = L.geoJson(b[0], {
+      style: {
+        color: '#70b371',
+        opacity: .7
+      }
+    }).addTo(self.map)
+    self.routes['Chesapeake Country'] = L.geoJson(c[0], {
+      style: {
+        color: '#ff535c',
+        opacity: .7
+      }
+    }).addTo(self.map)
+    self.makeLegend()
+  })
+  /*
   $.getJSON('js/route1.json', function(json) {
     self.routes['Berlin to Assateague Island'] = L.geoJson(json, {
       style: {
@@ -69,6 +101,18 @@ BywayMap.prototype.makeMap = function() {
       }
     }).addTo(self.map)
   })
+  */
+}
+
+BywayMap.prototype.makeLegend = function(id, toggle) {
+  var html = ''
+  for (var key in this.routes) {
+    console.log(this.routes[key]);
+    var color = this.routes[key].options.style.color
+    html += '<p style="color:' + color + '">' + key
+    html += ' <input type="checkbox" checked value="' + key + '"></input></p>'
+  }
+  $('.legend').html(html)
 }
 
 BywayMap.prototype.highlightRoute = function(id, toggle) {
